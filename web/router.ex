@@ -20,7 +20,8 @@ defmodule Togither.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Togither do
-  #   pipe_through :api
-  # end
+  scope "/api", Togither do
+    pipe_through :api
+    get "/", ApiController, :index
+  end
 end
